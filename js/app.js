@@ -136,9 +136,13 @@ let storeDumps =function (){
 }
 
 let getPastDumps =function getPastDumps(){
-    console.log(localStorage.getItem("todoTurds"));
-    console.log(localStorage.getItem("touchyFealyTurds"));
-    console.log(localStorage.getItem("unclassifiedTurds"));
+    let savedTurds = localStorage.getItem("todoTurds");
+    let savedfeelings = localStorage.getItem("touchyFealyTurds");
+    let unclassifedTurds = localStorage.getItem("unclassifiedTurds");
+
+    toduTurds.innerHTML = savedTurds;
+    touchyFealyTurds.innerHTML = savedfeelings;
+    unclassifiedTurds.innerHTML = unclassifedTurds;
 }
 
 let handleDumps = function(e){
