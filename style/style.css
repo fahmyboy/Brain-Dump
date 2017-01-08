@@ -2,9 +2,10 @@
     font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
     color: slategrey;
 }
+
 #turd_todos, #turd_feelings, #turd_unclassified
 {
-    border-width: 0px;
+    border-width: 1px;
     border-style: dotted;
     border-color: grey;
     padding: 5px;
@@ -13,7 +14,6 @@
     float: left;
     text-align: left;
 }
-
 h1{
     font-size: 50pt;
     text-align: center;
