@@ -31,8 +31,6 @@ const currentHourOfDate = currentDate.getHours();
  ***/
 let welcomeMessage = ""
 
-
-
 switch(currentHourOfDate){
     case 4:
     case 5:
@@ -69,7 +67,6 @@ switch(currentHourOfDate){
         welcomeMessage = "Why are you awake ?"
         break;
 }
-
 
 /******
  * Logic having to do with user greetings and instructions
@@ -140,7 +137,8 @@ let storeDumps =function (){
 
 let getPastDumps =function getPastDumps(){
     console.log(localStorage.getItem("todoTurds"));
-
+    console.log(localStorage.getItem("touchyFealyTurds"));
+    console.log(localStorage.getItem("unclassifiedTurds"));
 }
 
 let handleDumps = function(e){
@@ -172,10 +170,9 @@ let handleDumps = function(e){
  * Event Handlers
  **************/
 window.onload = userInput.focus(); //This is to remove friction. so the user can start typing
+userInput.addEventListener("keypress", handleDumps);
 window.onload = getPastDumps;
 window.onbeforeunload = storeDumps;
-userInput.addEventListener("keypress", handleDumps);
-
 
 /*****
  * backlog
