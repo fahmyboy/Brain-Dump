@@ -144,8 +144,6 @@ function getPastDumps(){
 }
 
 let handleDumps = function(e){
-    console.log(e.keyCode);
-
      if (e.keyCode === 13) { //did they press enter?
    
         let individualTurd = userInput.value;
