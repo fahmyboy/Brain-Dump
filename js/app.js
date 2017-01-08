@@ -10,6 +10,15 @@ const userInfo = {
     name : "good looking!",
 }
 
+/**
+ * Logic having to do with user input
+ */
+const userInput = document.createElement("input");
+    userInput.setAttribute("type", "text");
+    userInput.setAttribute("id", "toilet");
+
+userInteraction.appendChild(userInput);
+
 const currentDate = new Date();
 const currentHourOfDate = currentDate.getHours();
 
@@ -21,6 +30,8 @@ const currentHourOfDate = currentDate.getHours();
  * 1am - 3am    1,2,3
  ***/
 let welcomeMessage = ""
+
+
 
 switch(currentHourOfDate){
     case 4:
@@ -59,6 +70,7 @@ switch(currentHourOfDate){
         break;
 }
 
+
 /******
  * Logic having to do with user greetings and instructions
  * 
@@ -72,17 +84,6 @@ const userAction = document.createElement("h2");
 instructions.appendChild(greeting);
 instructions.appendChild(userAction);
 
-/**
- * Logic having to do with user input
- */
-const userInput = document.createElement("input");
-    userInput.setAttribute("type", "text");
-    userInput.setAttribute("id", "toilet");
- 
-
-userInteraction.appendChild(userInput);
-
-document.onload = userInput.focus(); //This is to remove friction. so the user can start typing
 
 let classifyTurd = function(turd){
    /******
@@ -130,9 +131,6 @@ let makeTurdo = function(individualTurd){
     return turdContainer
 }
 
-
-
-
 function storeDumps(){
     localStorage.setItem("todoTurds", toduTurds.innerHTML)
     localStorage.setItem("touchyFealyTurds", touchyFealyTurds.innerHTML)
@@ -140,21 +138,15 @@ function storeDumps(){
 
 }
 
-
 function getPastDumps(){
     console.log(localStorage.getItem("todoTurds"));
 
 }
 
-/**
- * Event Handlers
- */
+let handleDumps = function(e){
+    console.log(e.keyCode);
 
-window.onload = getPastDumps;
-window.onbeforeunload = storeDumps;
-userInput.addEventListener("keypress", function(event){
- 
-     if (event.keyCode === 13) { //did they press enter?
+     if (e.keyCode === 13) { //did they press enter?
    
         let individualTurd = userInput.value;
         let turdClassification = classifyTurd(individualTurd);
@@ -174,11 +166,20 @@ userInput.addEventListener("keypress", function(event){
                 unclassifiedTurds.appendChild(turdDiv);
                 break;
         }
-        userInput.value="" //Clears input field
+        userInput.value = "" //Clears input field
      }         
-});
+}
 
-//window.addEventListener("onbeforeunload",storeDumps());
+/*************
+ * Event Handlers
+ **************/
+
+window.onload = getPastDumps;
+document.onload = userInput.focus(); //This is to remove friction. so the user can start typing
+window.onbeforeunload = storeDumps;
+userInput.addEventListener("keypress", handleDumps);
+
+
 /*****
  * backlog
  *  turn tudo's into check boxes
