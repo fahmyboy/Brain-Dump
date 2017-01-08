@@ -130,6 +130,28 @@ let makeTurdo = function(individualTurd){
     return turdContainer
 }
 
+
+
+
+function storeDumps(){
+    localStorage.setItem("todoTurds", toduTurds.innerHTML)
+    localStorage.setItem("touchyFealyTurds", touchyFealyTurds.innerHTML)
+    localStorage.setItem("unclassifiedTurds", unclassifiedTurds.innerHTML)
+
+}
+
+
+function getPastDumps(){
+    console.log(localStorage.getItem("todoTurds"));
+
+}
+
+/**
+ * Event Handlers
+ */
+
+window.onload = getPastDumps;
+window.onbeforeunload = storeDumps;
 userInput.addEventListener("keypress", function(event){
  
      if (event.keyCode === 13) { //did they press enter?
@@ -156,21 +178,6 @@ userInput.addEventListener("keypress", function(event){
      }         
 });
 
-window.onbeforeunload = storeDumps;
-
-function storeDumps(){
-    localStorage.setItem("todoTurds", toduTurds.innerHTML)
-    localStorage.setItem("touchyFealyTurds", touchyFealyTurds.innerHTML)
-    localStorage.setItem("unclassifiedTurds", unclassifiedTurds.innerHTML)
-
-}
-
-window.onload = getPastDumps;
-
-function getPastDumps(){
-    console.log(localStorage.getItem("todoTurds"));
-
-}
 //window.addEventListener("onbeforeunload",storeDumps());
 /*****
  * backlog
