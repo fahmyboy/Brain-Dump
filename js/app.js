@@ -13,7 +13,6 @@ const userInfo = {
 const currentDate = new Date();
 const currentHourOfDate = currentDate.getHours();
 
-
 /****
  * 4am - 6am    4,5,6
  * 7am - 11am   7,8,9,10,11
@@ -156,7 +155,6 @@ userInput.addEventListener("keypress", function(event){
         userInput.value="" //Clears input field
      }         
 });
-
 
 window.onbeforeunload = storeDumps;
 
