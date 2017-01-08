@@ -1,0 +1,46 @@
+* {
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    color: slategrey;
+}
+#turd_todos, #turd_feelings, #turd_unclassified
+{
+    border-width: 0px;
+    border-style: dotted;
+    border-color: grey;
+    padding: 5px;
+    margin:1px;
+    width: 30%;
+    float: left;
+    text-align: left;
+}
+
+h1{
+    font-size: 50pt;
+    text-align: center;
+
+}
+h2{
+    font-size: 40pt;
+    text-align: center;
+
+}
+#toilet
+{
+    width: 100%;
+    font-size: 30;
+    border-width: 0px;
+    border-style:solid;
+    padding: 10pt;
+    text-align: center;
+
+}
+
+.bucket_header
+{
+    font-weight: bold;
+    text-align: center;
+    border-bottom-color: gray;
+    border-bottom-style: solid;
+    border-bottom-width: 2;
+
+}
