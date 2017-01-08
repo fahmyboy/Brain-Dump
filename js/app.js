@@ -131,14 +131,14 @@ let makeTurdo = function(individualTurd){
     return turdContainer
 }
 
-function storeDumps(){
+let storeDumps =function (){
     localStorage.setItem("todoTurds", toduTurds.innerHTML)
     localStorage.setItem("touchyFealyTurds", touchyFealyTurds.innerHTML)
     localStorage.setItem("unclassifiedTurds", unclassifiedTurds.innerHTML)
 
 }
 
-function getPastDumps(){
+let getPastDumps =function getPastDumps(){
     console.log(localStorage.getItem("todoTurds"));
 
 }
@@ -171,9 +171,8 @@ let handleDumps = function(e){
 /*************
  * Event Handlers
  **************/
-
+window.onload = userInput.focus(); //This is to remove friction. so the user can start typing
 window.onload = getPastDumps;
-document.onload = userInput.focus(); //This is to remove friction. so the user can start typing
 window.onbeforeunload = storeDumps;
 userInput.addEventListener("keypress", handleDumps);
 
