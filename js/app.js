@@ -178,21 +178,23 @@ userInput.addEventListener("keypress", handleDumps);
 window.onload = getPastDumps;
 window.onbeforeunload = storeDumps;
 
-/*****
- * backlog
- *  turn tudo's into check boxes
+/*****BACKLOG[not started]**********
+ * [wip] User Experience
+ * [] TURDO
+ *      [] allow to mark as completed
  *  background pictures depending on the time of day
  *  ask questions re: why you feel tht way?
  *  create a gratitude bucket
  *  instructions should change as user is typing
- *  save to user information to local storage 
  *  add a mantra section....
- *  done for the day
  *  are you still feeling this? 
  *   todo to do a 5 wyys?
  ****/
-
+/*****BACKLOG[completed]**********
+ * [] turn tudo's into check boxes
+ * [] save to user information to local storage 
+ ****************/
 /**
  * refactor
- *  create clean items to refactor
+ *  add tests
  */
