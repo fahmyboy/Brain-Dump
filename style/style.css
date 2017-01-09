@@ -44,3 +44,9 @@ h2{
     border-bottom-width: 2;
 
 }
+#footer{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    font-size: 9pt;
+}

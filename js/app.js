@@ -4,6 +4,7 @@ const userInteraction = document.getElementById("userInteraction"); //action tak
 const toduTurds = document.getElementById("turd_todos"); //output of the user
 const touchyFealyTurds = document.getElementById("turd_feelings"); //output of the user
 const unclassifiedTurds = document.getElementById("turd_unclassified"); //output of the user
+const footer = document.getElementById("footer"); //output of the user
 
 //Action -> Need to replace this with Mongo
 const userInfo = {
@@ -11,8 +12,16 @@ const userInfo = {
 }
 
 /**
- * Logic having to do with user input
+ * Secion adds additional html objects
  */
+
+/* Footer Start */
+    let linkToBackLog = document.createElement("a");
+    linkToBackLog.setAttribute('href', './backlog.md');
+    linkToBackLog.innerText = 'Backlog';
+    footer.appendChild(linkToBackLog)
+/* Footer end */
+
 const userInput = document.createElement("input");
     userInput.setAttribute("type", "text");
     userInput.setAttribute("id", "toilet");
@@ -178,23 +187,3 @@ userInput.addEventListener("keypress", handleDumps);
 window.onload = getPastDumps;
 window.onbeforeunload = storeDumps;
 
-/*****BACKLOG[not started]**********
- * [wip] User Experience
- * [] TURDO
- *      [] allow to mark as completed
- *  background pictures depending on the time of day
- *  ask questions re: why you feel tht way?
- *  create a gratitude bucket
- *  instructions should change as user is typing
- *  add a mantra section....
- *  are you still feeling this? 
- *   todo to do a 5 wyys?
- ****/
-/*****BACKLOG[completed]**********
- * [] turn tudo's into check boxes
- * [] save to user information to local storage 
- ****************/
-/**
- * refactor
- *  add tests
- */
