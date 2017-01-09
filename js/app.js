@@ -6,90 +6,66 @@ const touchyFealyTurds = document.getElementById("turd_feelings"); //output of t
 const unclassifiedTurds = document.getElementById("turd_unclassified"); //output of the user
 const footer = document.getElementById("footer"); //output of the user
 
-//Action -> Need to replace this with Mongo
 const userInfo = {
     name : "good looking!",
 }
 
-/**
- * Secion adds additional html objects
- */
 
-/* Footer Start */
-    let linkToBackLog = document.createElement("a");
-    linkToBackLog.setAttribute('href', './backlog.md');
-    linkToBackLog.innerText = 'Backlog';
-    footer.appendChild(linkToBackLog)
-/* Footer end */
 
-const userInput = document.createElement("input");
-    userInput.setAttribute("type", "text");
-    userInput.setAttribute("id", "toilet");
 
-userInteraction.appendChild(userInput);
+/************
+ * The functions
+ ************/
 
-const currentDate = new Date();
-const currentHourOfDate = currentDate.getHours();
 
-/****
- * 4am - 6am    4,5,6
- * 7am - 11am   7,8,9,10,11
- * 12pm - 4pm   12, 13, 14, 15, 16
- * 5pm - 12pm   17, 16, 17, 17, 19, 21, 22, 23, 0
- * 1am - 3am    1,2,3
- ***/
-let welcomeMessage = ""
+let getTimeOfDaySpecificWelcomeMessage = function(){
+    /****
+     * 4am - 6am    4,5,6
+     * 7am - 11am   7,8,9,10,11
+     * 12pm - 4pm   12, 13, 14, 15, 16
+     * 5pm - 12pm   17, 16, 17, 17, 19, 21, 22, 23, 0
+     * 1am - 3am    1,2,3
+     ***/
 
-switch(currentHourOfDate){
-    case 4:
-    case 5:
-    case 6:
-        welcomeMessage = "Wow, you're up early ";
-        break;
-    case 7:
-    case 8:
-    case 9:
-    case 10:
-    case 11:
-        welcomeMessage = "Good morning ";
-        break;
-    case 12:
-    case 13:
-    case 14:
-    case 15:
-    case 16:
-        welcomeMessage = "Good afternoon ";
-        break;    
-    case 17:
-    case 18:
-    case 19:
-    case 20:
-    case 21:
-    case 22:
-    case 23:
-    case 0:
-        welcomeMessage = "Good evening ";
-        break; 
-    case 1:
-    case 2:
-    case 3:
-        welcomeMessage = "Why are you awake ?"
-        break;
+    const currentDate = new Date();
+    const currentHourOfDate = currentDate.getHours();
+    switch(currentHourOfDate){
+        case 4:
+        case 5:
+        case 6:
+            return "Wow, you're up early ";
+            break;
+        case 7:
+        case 8:
+        case 9:
+        case 10:
+        case 11:
+            return "Good morning ";
+            break;
+        case 12:
+        case 13:
+        case 14:
+        case 15:
+        case 16:
+            return "Good afternoon ";
+            break;    
+        case 17:
+        case 18:
+        case 19:
+        case 20:
+        case 21:
+        case 22:
+        case 23:
+        case 0:
+            return "Good evening ";
+            break; 
+        case 1:
+        case 2:
+        case 3:
+            return "Why are you awake ?"
+            break;
+    }
 }
-
-/******
- * Logic having to do with user greetings and instructions
- * 
- */
-const greeting = document.createElement("h1");
-    greeting.innerHTML = welcomeMessage + userInfo.name;
-
-const userAction = document.createElement("h2");
-    userAction.innerHTML="Whats on your mind?"
-
-instructions.appendChild(greeting);
-instructions.appendChild(userAction);
-
 
 let classifyTurd = function(turd){
    /******
@@ -178,6 +154,39 @@ let handleDumps = function(e){
         userInput.value = "" //Clears input field
      }         
 }
+
+/**
+ * Section adds additional HTML elements to the DIV containers
+ */
+
+
+// welcome message Start //
+    const greeting = document.createElement("h1");
+    let welcomeMessage = getTimeOfDaySpecificWelcomeMessage();
+    greeting.innerHTML = welcomeMessage + userInfo.name;
+// welcome message End
+
+// Input feel start 
+    const userInput = document.createElement("input");
+    userInput.setAttribute("type", "text");
+    userInput.setAttribute("id", "toilet");
+    userInteraction.appendChild(userInput);
+// Input feel start
+
+// User Instructions start 
+    const userAction = document.createElement("h2");
+        userAction.innerHTML="Whats on your mind?"
+
+    instructions.appendChild(greeting);
+    instructions.appendChild(userAction);
+// User Instructions end
+
+// Footer Start
+    let linkToBackLog = document.createElement("a");
+    linkToBackLog.setAttribute('href', './backlog.md');
+    linkToBackLog.innerText = 'Backlog';
+    footer.appendChild(linkToBackLog)
+// Footer end
 
 /*************
  * Event Handlers

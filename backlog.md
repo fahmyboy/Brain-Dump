@@ -1,5 +1,5 @@
 BACKLOG[not started
- * [wip] User Experience
+ * [] User Experience
  * [] TURDO
  *      [] allow to mark as completed
  *  background pictures depending on the time of day
@@ -16,4 +16,4 @@ BACKLOG[completed]
  * [] save to user information to local storage 
 
 Refactor
-   add tests
+   [] Add JSON objects to represent users and dumps
