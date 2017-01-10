@@ -10,9 +10,6 @@ const userInfo = {
     name : "good looking!",
 }
 
-
-
-
 /************
  * The functions
  ************/
@@ -77,14 +74,13 @@ let classifyTurd = function(turd){
     *   Outputs: either a todo, feeling, unclassified
     *****/
     let todoPattern = new RegExp('to do|need to|todo|go to|pick up|want to|wanna');
-    let feelingPattern_Negative = new RegExp('stressed|feel|tired|lonely|frustrated|angry|hate|upset|sad|like');
+    let feelingPattern_Negative = new RegExp('stressed|tired|lonely|frustrated|angry|hate|upset|sad|like');
     let feelingPattern_Positive = new RegExp('happy|grateful');
 
     let isItATodo = todoPattern.test(turd);
     let isItNegativeFeeling = feelingPattern_Negative.test(turd);
     let isItAPositiveFeeling = feelingPattern_Positive.test(turd);
-
-
+    
     if (isItATodo){
         return ['todo'];
     }else if (isItNegativeFeeling){
