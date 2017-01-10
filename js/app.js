@@ -120,6 +120,16 @@ let storeDumps =function (){
 
 }
 
+let clearDumps = function(){
+    localStorage.setItem("todoTurds", "")
+    localStorage.setItem("touchyFealyTurds", "")
+    localStorage.setItem("unclassifiedTurds", "")
+
+    toduTurds.innerHTML = "";
+    touchyFealyTurds.innerHTML = "";
+    unclassifiedTurds.innerHTML = "";
+}
+
 let getPastDumps =function getPastDumps(){
     let savedTurds = localStorage.getItem("todoTurds");
     let savedfeelings = localStorage.getItem("touchyFealyTurds");
@@ -182,10 +192,18 @@ let handleDumps = function(e){
 // User Instructions end
 
 // Footer Start
+    //Link to Backlog
     let linkToBackLog = document.createElement("a");
     linkToBackLog.setAttribute('href', './backlog.md');
-    linkToBackLog.innerText = 'Backlog';
+    linkToBackLog.innerText = ' Backlog ';
     footer.appendChild(linkToBackLog)
+
+    //Link to clear the dumps
+    let linkToClearDumps = document.createElement("a");
+    linkToClearDumps.setAttribute("href", "#")
+    linkToClearDumps.innerText = " Clear Dumps ";
+    linkToClearDumps.addEventListener("click", clearDumps);
+    footer.appendChild(linkToClearDumps);
 // Footer end
 
 /*************
