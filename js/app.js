@@ -80,7 +80,7 @@ let classifyTurd = function(turd){
     let isItATodo = todoPattern.test(turd);
     let isItNegativeFeeling = feelingPattern_Negative.test(turd);
     let isItAPositiveFeeling = feelingPattern_Positive.test(turd);
-    
+
     if (isItATodo){
         return ['todo'];
     }else if (isItNegativeFeeling){
@@ -173,7 +173,13 @@ let handleDumps = function(e){
                 break;
             case 'feeling':
                 let typeOfEmotion = turdClassification[1];
-                newDiv = makeFeeling(individualTurd, typeOfEmotion);            
+                newDiv = makeFeeling(individualTurd, typeOfEmotion);   
+                if (typeOfEmotion === 'Positive'){
+                    newDiv.setAttribute('class','positive_Emotion');
+                } else{
+                    newDiv.setAttribute('class','negative_Emotion');
+
+                }
                 touchyFealyTurds.appendChild(newDiv);
                 break;
             case 'unclassified':
