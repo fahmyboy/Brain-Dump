@@ -77,20 +77,26 @@ let classifyTurd = function(turd){
     *   Outputs: either a todo, feeling, unclassified
     *****/
     let todoPattern = new RegExp('to do|need to|todo|go to|pick up|want to|wanna');
-    let feelingPattern = new RegExp('feel|tired|lonely|frustrated|angry|hate|upset|happy|grateful|sad|like');
+    let feelingPattern_Negative = new RegExp('stressed|feel|tired|lonely|frustrated|angry|hate|upset|sad|like');
+    let feelingPattern_Positive = new RegExp('happy|grateful');
 
     let isItATodo = todoPattern.test(turd);
-    let isItAFeeling = feelingPattern.test(turd);
+    let isItNegativeFeeling = feelingPattern_Negative.test(turd);
+    let isItAPositiveFeeling = feelingPattern_Positive.test(turd);
+
 
     if (isItATodo){
-        return 'todo';
-    }else if (isItAFeeling){
-        return 'feeling'
+        return ['todo'];
+    }else if (isItNegativeFeeling){
+        return ['feeling', 'Negative']
+     }else if (isItAPositiveFeeling){
+        return ['feeling', 'Positive']
     } else{
-        return 'unclassified';
+        return ['unclassified'];
     }
 
 }
+
 
 let makeTurdo = function(individualTurd){
     /**
@@ -111,6 +117,23 @@ let makeTurdo = function(individualTurd){
     turdContainer.appendChild(turdoText);
 
     return turdContainer
+}
+
+let makeFeeling = function(individualTurd, typeOfEmotion){
+    let turdContainer = document.createElement('div');
+    let emoticon = ""
+    console.log(typeOfEmotion);
+    if (typeOfEmotion === 'Positive') {
+        emoticon = ":) "
+    } else if(typeOfEmotion=== 'Negative'){
+        emoticon = ":( "
+    } else{
+        emoticon = ":|"
+    }
+    turdContainer.innerText = emoticon + individualTurd;
+
+    return turdContainer;
+
 }
 
 let storeDumps =function (){
@@ -146,15 +169,16 @@ let handleDumps = function(e){
         let individualTurd = userInput.value;
         let turdClassification = classifyTurd(individualTurd);
         let turdDiv = document.createElement("div") 
-
-        switch (turdClassification){
+        let newDiv = "";
+        switch (turdClassification[0]){
             case 'todo':
-                let newDiv = makeTurdo(individualTurd);
+                newDiv = makeTurdo(individualTurd);
                 toduTurds.appendChild(newDiv);
                 break;
             case 'feeling':
-                turdDiv.innerHTML = individualTurd;            
-                touchyFealyTurds.appendChild(turdDiv);
+                let typeOfEmotion = turdClassification[1];
+                newDiv = makeFeeling(individualTurd, typeOfEmotion);            
+                touchyFealyTurds.appendChild(newDiv);
                 break;
             case 'unclassified':
                 turdDiv.innerHTML = individualTurd;
