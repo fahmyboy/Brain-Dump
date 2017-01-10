@@ -76,7 +76,7 @@ let classifyTurd = function(turd){
     *   Input : A single turd
     *   Outputs: either a todo, feeling, unclassified
     *****/
-    let todoPattern = new RegExp('to do|need to|todo|go to|pick up');
+    let todoPattern = new RegExp('to do|need to|todo|go to|pick up|want to|wanna');
     let feelingPattern = new RegExp('feel|tired|lonely|frustrated|angry|hate|upset|happy|grateful|sad|like');
 
     let isItATodo = todoPattern.test(turd);
