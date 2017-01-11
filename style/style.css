@@ -53,12 +53,17 @@ h2{
 }
 
 .positive_Emotion{
-    color: white;
-    background-color: cornflowerblue;
+    color: cornflowerblue;
     padding: 2px;
+    border-radius: 5px;     
+    margin: 2px
+
+
 }
 .negative_Emotion{
-    color:white;
-    background-color: saddlebrown;
+
+   -color: saddlebrown;
     padding: 2px;
+    border-radius: 5px;
+    margin: 2px
 }
