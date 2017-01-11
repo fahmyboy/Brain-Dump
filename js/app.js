@@ -105,7 +105,9 @@ let makeTurdo = function(individualTurd){
     let turdContainer = document.createElement('div')
     let checkBox = document.createElement('input')
         checkBox.setAttribute("type", "checkBox")
+        checkBox.addEventListener("click", changeTurdoStatus);
     let turdoText = document.createElement("span")
+        turdoText.setAttribute("class", "turdo_Text")
         turdoText.innerHTML = individualTurd;
  
     turdContainer.appendChild(checkBox);
@@ -114,6 +116,19 @@ let makeTurdo = function(individualTurd){
     return turdContainer
 }
 
+let changeTurdoStatus = function(e){
+    let checkBox = e.currentTarget.checked;
+    let turdoText = e.currentTarget.parentElement.getElementsByClassName('turdo_Text')[0];
+    console.log(turdoText)
+    if (checkBox) {
+        turdoText.style.textDecoration = 'line-through';
+    } else{
+        turdoText.style.textDecoration = 'none';
+
+    }
+    console.log(checkBox);
+    console.log(turdoText);
+}
 let makeFeeling = function(individualTurd, typeOfEmotion){
     let turdContainer = document.createElement('div');
     let emoticon = ""

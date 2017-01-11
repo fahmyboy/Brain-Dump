@@ -3,7 +3,7 @@ BACKLOG
     [x] turn tudo's into check boxes
     [x] save to user information to local storage    
     TURDO
-       [wip] allow to mark as completed
+       [x] allow to mark as completed
     Feelings
         [wip]add an emogi to a feeling
             [] add a picture emoji
@@ -15,7 +15,7 @@ BACKLOG
     []add a mantra section....
     []are you still feeling this? 
     []todo to do a 5 wyys?
-
+    []Allow user to clear dumps by typing 'clear all dumps' in input box
 
 Refactor
    [] Add JSON objects to represent users and dumps
