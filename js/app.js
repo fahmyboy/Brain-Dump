@@ -14,7 +14,6 @@ const userInfo = {
  * The functions
  ************/
 
-
 let getTimeOfDaySpecificWelcomeMessage = function(){
     /****
      * 4am - 6am    4,5,6
@@ -76,20 +75,25 @@ let classifyTurd = function(turd){
     let todoPattern = new RegExp('to do|need to|todo|go to|pick up|want to|wanna');
     let feelingPattern_Negative = new RegExp('stressed|tired|lonely|frustrated|angry|hate|upset|sad|like');
     let feelingPattern_Positive = new RegExp('happy|grateful');
+    let userCommand = new RegExp('clear all dumps');
 
     let isItATodo = todoPattern.test(turd);
     let isItNegativeFeeling = feelingPattern_Negative.test(turd);
     let isItAPositiveFeeling = feelingPattern_Positive.test(turd);
 
-    if (isItATodo){
-        return ['todo'];
-    }else if (isItNegativeFeeling){
-        return ['feeling', 'Negative']
-     }else if (isItAPositiveFeeling){
-        return ['feeling', 'Positive']
-    } else{
-        return ['unclassified'];
-    }
+    switch(isItATodo){
+        case isItATodo:
+          return ['todo'];
+          break;
+        case isItNegativeFeeling:
+          return ['feeling', 'Negative'];
+          break;
+        case isItAPositiveFeeling:
+          return ['feeling', 'Positive']    
+          break;
+        default:
+            return ['unclassified'];
+     }
 
 }
 
@@ -129,6 +133,7 @@ let changeTurdoStatus = function(e){
     console.log(checkBox);
     console.log(turdoText);
 }
+
 let makeFeeling = function(individualTurd, typeOfEmotion){
     let turdContainer = document.createElement('div');
     let emoticon = ""
@@ -146,7 +151,7 @@ let makeFeeling = function(individualTurd, typeOfEmotion){
 
 }
 
-let storeDumps =function (){
+let storeDumps = function (){
     localStorage.setItem("todoTurds", toduTurds.innerHTML)
     localStorage.setItem("touchyFealyTurds", touchyFealyTurds.innerHTML)
     localStorage.setItem("unclassifiedTurds", unclassifiedTurds.innerHTML)
@@ -163,7 +168,7 @@ let clearDumps = function(){
     unclassifiedTurds.innerHTML = "";
 }
 
-let getPastDumps =function getPastDumps(){
+let getPastDumps = function getPastDumps(){
     let savedTurds = localStorage.getItem("todoTurds");
     let savedfeelings = localStorage.getItem("touchyFealyTurds");
     let unclassifedTurds = localStorage.getItem("unclassifiedTurds");
