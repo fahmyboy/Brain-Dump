@@ -93,7 +93,6 @@ let classifyTurd = function(turd){
 
 }
 
-
 let makeTurdo = function(individualTurd){
     /**
      * Takes in an intdividual turd and turns it into a todo item
