@@ -15,7 +15,7 @@ BACKLOG
     []add a mantra section....
     []are you still feeling this? 
     []todo to do a 5 wyys?
-    []Allow user to clear dumps by typing 'clear all dumps' in input box
+    [wip]Allow user to clear dumps by typing 'clear all dumps' in input box
 
 Refactor
    [] Add JSON objects to represent users and dumps
