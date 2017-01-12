@@ -75,25 +75,27 @@ let classifyTurd = function(turd){
     let todoPattern = new RegExp('to do|need to|todo|go to|pick up|want to|wanna');
     let feelingPattern_Negative = new RegExp('stressed|tired|lonely|frustrated|angry|hate|upset|sad|like');
     let feelingPattern_Positive = new RegExp('happy|grateful');
-    let userCommand = new RegExp('clear all dumps');
+    let userCommand = new RegExp('let it all go...');
 
     let isItATodo = todoPattern.test(turd);
     let isItNegativeFeeling = feelingPattern_Negative.test(turd);
     let isItAPositiveFeeling = feelingPattern_Positive.test(turd);
+    let isItAUserCommand_Clear = userCommand.test(turd);
 
-    switch(isItATodo){
-        case isItATodo:
-          return ['todo'];
-          break;
-        case isItNegativeFeeling:
-          return ['feeling', 'Negative'];
-          break;
-        case isItAPositiveFeeling:
-          return ['feeling', 'Positive']    
-          break;
-        default:
-            return ['unclassified'];
-     }
+    if (isItAUserCommand_Clear){
+        clearDumps();
+        return "";
+    }
+    
+    if (isItATodo===true){ 
+        return ['todo']
+    }else if (isItNegativeFeeling===true){
+        return ['feeling', 'Negative']
+    }else if (isItAPositiveFeeling===true){
+        return ['feeling', 'Positive']
+    }else{
+        return ['unclassified'];
+    };
 
 }
 
@@ -243,12 +245,6 @@ let handleDumps = function(e){
     linkToBackLog.innerText = ' Backlog ';
     footer.appendChild(linkToBackLog)
 
-    //Link to clear the dumps
-    let linkToClearDumps = document.createElement("a");
-    linkToClearDumps.setAttribute("href", "#")
-    linkToClearDumps.innerText = " Clear Dumps ";
-    linkToClearDumps.addEventListener("click", clearDumps);
-    footer.appendChild(linkToClearDumps);
 // Footer end
 
 /*************
