@@ -3,7 +3,7 @@
     color: slategrey;
 }
 
-#turd_todos, #turd_feelings, #turd_unclassified
+#turd_todos, #turd_feelings
 {
     border-width: 1px;
     border-style: dotted;
@@ -14,7 +14,19 @@
     float: left;
     text-align: left;
 }
-h1{
+
+#turd_unclassified
+{
+    border-width: 1px;
+    border-style: dotted;
+    border-color: grey;
+    padding: 5px;
+    margin:1px;
+    width: 30%;
+    float: left;
+    text-align: left;
+    font-size: 20;
+}h1{
     font-size: 50pt;
     text-align: center;
 
