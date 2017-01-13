@@ -1,6 +1,6 @@
 * {
     font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
-    color: slategrey;
+    color: white;
 }
 
 #turd_todos, #turd_feelings
@@ -66,7 +66,6 @@ h2{
 }
 
 .positive_Emotion{
-    color: cornflowerblue;
     padding: 2px;
     border-radius: 5px;     
     margin: 2px
@@ -75,7 +74,6 @@ h2{
 }
 .negative_Emotion{
 
-   -color: saddlebrown;
     padding: 2px;
     border-radius: 5px;
     margin: 2px
@@ -83,4 +81,5 @@ h2{
 
 #userInteraction{
         box-shadow: 10px 10px 30px #888888;
+        background-color: rgba(0, 0, 0, 0.5);
 }

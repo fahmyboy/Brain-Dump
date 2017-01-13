@@ -1,4 +1,5 @@
 'use strict';
+const documentbody = document.getElementsByTagName("body");
 const instructions = document.getElementById("userInstruction"); //talking to the user
 const userInteraction = document.getElementById("userInteraction"); //action taken by the user
 const toduTurds = document.getElementById("turd_todos"); //output of the user
@@ -7,7 +8,7 @@ const unclassifiedTurds = document.getElementById("turd_unclassified"); //output
 const footer = document.getElementById("footer"); //output of the user
 
 const userInfo = {
-    name : "good looking!",
+    name : "Ahmad!",
 }
 
 /************
@@ -75,7 +76,7 @@ let classifyTurd = function(turd){
     let todoPattern = new RegExp('to do|need to|todo|go to|pick up|want to|wanna');
     let feelingPattern_Negative = new RegExp('stressed|tired|lonely|frustrated|angry|hate|upset|sad|like|worried');
     let feelingPattern_Positive = new RegExp('happy|grateful');
-    let userCommand = new RegExp('let it all go...');
+    let userCommand = new RegExp('let it all go');
 
     let isItATodo = todoPattern.test(turd);
     let isItNegativeFeeling = feelingPattern_Negative.test(turd);
@@ -212,10 +213,20 @@ let handleDumps = function(e){
      }         
 }
 
+let getBackGroundImage = function(){
+    return "url('imgs/agadir_sunset.jpg')";
+}
 /**
  * Section adds additional HTML elements to the DIV containers
  */
 
+// body
+    let background_img = getBackGroundImage();
+    console.log(background_img)
+    document.body.style.backgroundImage  = background_img;
+	document.body.style.backgroundSize = "cover";
+
+   // documentbody.style.setBackGroundImage  = backgroundImage;
 
 // welcome message Start //
     const greeting = document.createElement("h1");
