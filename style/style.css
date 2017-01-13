@@ -1,10 +1,11 @@
 * {
     font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
-    color: white;
+    
 }
 
 #turd_todos, #turd_feelings
 {
+    color: white;
     border-width: 1px;
     border-style: dotted;
     border-color: grey;
@@ -17,6 +18,7 @@
 
 #turd_unclassified
 {
+    color: white;
     border-width: 1px;
     border-style: dotted;
     border-color: grey;
@@ -28,11 +30,13 @@
     font-size: 20;
 
 }h1{
+    color: white;
     font-size: 50pt;
     text-align: center;
 
 }
 h2{
+    color: white;
     font-size: 40pt;
     text-align: center;
 
@@ -45,6 +49,7 @@ h2{
     border-style:solid;
     padding: 10pt;
     text-align: center;
+    border-radius: 5px;
 
 }
 
@@ -82,4 +87,5 @@ h2{
 #userInteraction{
         box-shadow: 10px 10px 30px #888888;
         background-color: rgba(0, 0, 0, 0.5);
+        color: darkblue;
 }
