@@ -10,23 +10,27 @@
     border-color: grey;
     padding: 5px;
     margin:1px;
-    width: 30%;
+    width: 29%;
     float: left;
     text-align: left;
+    background-color: rgba(0, 172, 237, 0.8);
+    margin: 10px
+
+    
 }
 
 #turd_unclassified
 {
     color: white;
     border-width: 1px;
-    border-color: grey;
     padding: 5px;
     margin:1px;
     width: 30%;
     float: left;
     text-align: left;
-    font-size: 20;
-
+    background-color: rgba(0, 132, 180, 0.8);
+    border-radius: 5px;
+    margin: 10px
 }h1{
     color: white;
     font-size: 50pt;
@@ -53,9 +57,6 @@ h2{
 
 
 }
-#userInteraction{
-}
-
 
 .bucket_header
 {
