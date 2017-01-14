@@ -1,5 +1,4 @@
 #BACKLOG
--------
     [x] Create ability to clear all turds | 1 pom
     [x] turn tudo's into check boxes
     [x] save to user information to local storage    
