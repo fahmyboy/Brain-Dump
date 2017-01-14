@@ -136,13 +136,13 @@ let makeFeeling = function(individualTurd, typeOfEmotion){
     let emoticon = ""
     console.log(typeOfEmotion);
     if (typeOfEmotion === 'Positive') {
-        emoticon = ":) "
+        emoticon = "<img src='imgs/icon/happy.png' width='25px' height='25px'>";
     } else if(typeOfEmotion=== 'Negative'){
-        emoticon = ":( "
+        emoticon = "<img src='imgs/icon/sad.png' width='25px' height='25px'>";
     } else{
         emoticon = ":|"
     }
-    turdContainer.innerText = emoticon + individualTurd;
+    turdContainer.innerHTML = emoticon + individualTurd;
 
     return turdContainer;
 
