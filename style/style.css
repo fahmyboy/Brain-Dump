@@ -1,5 +1,5 @@
 * {
-    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    font-family: Arial, Helvetica, sans-serif
     
 }
 
@@ -7,7 +7,6 @@
 {
     color: white;
     border-width: 1px;
-    border-style: dotted;
     border-color: grey;
     padding: 5px;
     margin:1px;
@@ -20,7 +19,6 @@
 {
     color: white;
     border-width: 1px;
-    border-style: dotted;
     border-color: grey;
     padding: 5px;
     margin:1px;
@@ -45,13 +43,18 @@ h2{
 {
     width: 100%;
     font-size: 30;
-    border-width: 0px;
-    border-style:solid;
     padding: 10pt;
     text-align: center;
-    border-radius: 5px;
+    border-radius: 10px;
+    border-width: 0px;
+    box-shadow: 5px 5px 30px #888888;
+    background: rgba(255, 255, 255, .3);
+
 
 }
+#userInteraction{
+}
+
 
 .bucket_header
 {
@@ -84,8 +87,3 @@ h2{
     margin: 2px
 }
 
-#userInteraction{
-        box-shadow: 10px 10px 30px #888888;
-        background-color: rgba(0, 0, 0, 0.5);
-        color: darkblue;
-}

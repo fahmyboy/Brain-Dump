@@ -22,7 +22,7 @@
         [] add opacity to input screen
         [] get the same font as in the chrome app
         [] make backlog link more visible
-        []background pictures depending on the time of day
+        [] background pictures depending on the time of day
         [] *FEATURE*  make into a crome extion
 
     ##NFR

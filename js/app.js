@@ -8,8 +8,9 @@ const unclassifiedTurds = document.getElementById("turd_unclassified"); //output
 const footer = document.getElementById("footer"); //output of the user
 
 const userInfo = {
-    name : "Ahmad!",
+    name : "Af!"
 }
+
 
 /************
  * The functions
@@ -128,8 +129,6 @@ let changeTurdoStatus = function(e){
         turdoText.style.textDecoration = 'none';
 
     }
-    console.log(checkBox);
-    console.log(turdoText);
 }
 
 let makeFeeling = function(individualTurd, typeOfEmotion){
