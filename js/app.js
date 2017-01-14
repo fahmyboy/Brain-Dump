@@ -8,7 +8,7 @@ const unclassifiedTurds = document.getElementById("turd_unclassified"); //output
 const footer = document.getElementById("footer"); //output of the user
 
 const userInfo = {
-    name : "Sushi!"
+    name : "good looking"
 }
 
 
