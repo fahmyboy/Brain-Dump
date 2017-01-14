@@ -30,4 +30,4 @@
         [] Add JSON objects to represent users and dumps
         [] Add tests
         [] use travis ci to run tests
-        [] connect local git repo to github
+        [x] connect local git repo to github
