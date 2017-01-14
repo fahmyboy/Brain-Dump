@@ -8,7 +8,7 @@ const unclassifiedTurds = document.getElementById("turd_unclassified"); //output
 const footer = document.getElementById("footer"); //output of the user
 
 const userInfo = {
-    name : "Af!"
+    name : "Sushi!"
 }
 
 
@@ -71,7 +71,7 @@ let classifyTurd = function(turd){
     *****/
     let todoPattern = new RegExp('to do|need to|todo|go to|pick up|want to|wanna');
     let feelingPattern_Negative = new RegExp('stressed|tired|lonely|frustrated|angry|hate|upset|sad|like|worried');
-    let feelingPattern_Positive = new RegExp('happy|grateful');
+    let feelingPattern_Positive = new RegExp('happy|grateful|love');
     let userCommand = new RegExp('let it all go');
 
     let isItATodo = todoPattern.test(turd);
@@ -208,7 +208,7 @@ let handleDumps = function(e){
 }
 
 let getBackGroundImage = function(){
-    return "url('imgs/agadir_sunset.jpg')";
+    return "url('imgs/Tunnel of trees.jpg')";
 }
 /**
  * Section adds additional HTML elements to the DIV containers
