@@ -247,7 +247,7 @@ let getBackGroundImage = function(){
     //Link to Backlog
     let linkToBackLog = document.createElement("a");
     linkToBackLog.setAttribute('href', './backlog.md');
-    linkToBackLog.innerText = ' Backlog ';
+    linkToBackLog.innerHTML = "<img src='imgs/icon/checklist.png' height=50 widght=20>";
     footer.appendChild(linkToBackLog)
 
 // Footer end
