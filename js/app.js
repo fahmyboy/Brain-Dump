@@ -31,21 +31,18 @@ let getTimeOfDaySpecificWelcomeMessage = function(){
         case 5:
         case 6:
             return "Wow, you're up early ";
-            break;
         case 7:
         case 8:
         case 9:
         case 10:
         case 11:
             return "Good morning ";
-            break;
         case 12:
         case 13:
         case 14:
         case 15:
         case 16:
             return "Good afternoon ";
-            break;    
         case 17:
         case 18:
         case 19:
@@ -55,12 +52,10 @@ let getTimeOfDaySpecificWelcomeMessage = function(){
         case 23:
         case 0:
             return "Good evening ";
-            break; 
         case 1:
         case 2:
         case 3:
             return "Why are you awake ?"
-            break;
     }
 }
 
