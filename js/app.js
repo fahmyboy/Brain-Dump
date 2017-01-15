@@ -238,7 +238,7 @@ let getBackGroundImage = function(){
 
 // User Instructions start 
     const userAction = document.createElement("h2");
-        userAction.innerHTML="Whats on your mind?"
+        userAction.innerHTML="empty your mind"
 
     instructions.appendChild(greeting);
     instructions.appendChild(userAction);
