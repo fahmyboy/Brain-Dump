@@ -232,6 +232,7 @@ let getBackGroundImage = function(){
     const userInput = document.createElement("input");
     userInput.setAttribute("type", "text");
     userInput.setAttribute("id", "toilet");
+    userInput.setAttribute("placeholder", "type a thought, hit [enter] & repeat...")
     userInteraction.appendChild(userInput);
 // Input feel start
 
