@@ -1,38 +1,37 @@
 #BACKLOG
-    [DONE] save to user information to local storage    
+    [] *NEW FEATURE* create a gratitude bucket
+    [] *NEW FEATURE* add a mantra section....
+    [] *NEW FEATURE* add ability to easily request a feature
+    [] *NEW FEATURE* Capture goals
+    [] *NEW FEATURE* Capture what you learned today
+    [] *NEW FEATURE* Make into a chrome extion
     [] Allow to the ability to remove single turd
-    ##TURDO
+    [DONE] save to user information to local storage    
+    ## TURDO
        [DONE] allow to mark as completed
-    ##Feelings
-        []add an emogi to a feeling
-            [DONE] text emojo
-            [DONE - 14/1/2016] add a picture emoji
-            [] provide some insight into breakdown of how they feel over time
-            [] ask questions re: why you feel tht way?
-            [] are you still feeling this? 
-
-    [] *FEATURE*create a gratitude bucket
-    [] *FEATURE*instructions should change as user is typing
-    [] *FEATURE* add a mantra section....
+    ## FEELING
+        [] add an emogi to a feeling
+        [] provide some insight into breakdown of how they feel over time
+        [] ask questions re: why you feel tht way?
+        [] are you still feeling this? 
+        [DONE] Text emojo
+        [DONE] add a picture emoji. 14/1/2017
     ## COMMANDS
-        [x] Allow user to clear dumps by typing 'let it go' in input box
-    [] *FEATURE*  add ability to easily request a feature
-    [] *FEATURE*  capture goals
-    [] *FEATURE* capture what you learned today
-    [] *FEATURE* ask questions based on time of tay 
+        [DONE] Allow user to clear dumps by typing 'let it go' in input box
     ## USER EXPERIENCE
-        [x] add background image
-        [] add opacity to input screen
-        [] get the same font as in the chrome app
+        [] *FEATURE* instructions should change as user is typing
         [] make backlog link more visible
+        [] *FEATURE* ask questions based on time of Day 
         [] background pictures depending on the time of day
-        [] *FEATURE*  make into a crome extion
         [] Create user instruction
-    ## NFR
+        [DONE] add background image
+        [DONE] add opacity to input screen
+        [DONE] get the same font as in GOOGLE
+    ## Non-Functional Requirements 
         [] Add JSON objects to represent users and dumps
         [] Add tests
         [] use travis ci to run tests
-        [x] connect local git repo to github
         [] test using jasmine
         [] test FE using Selenium
         [] convert into a node application using express
+        [DONE] connect local git repo to github
