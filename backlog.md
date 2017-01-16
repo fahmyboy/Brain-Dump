@@ -19,12 +19,12 @@
     ## COMMANDS
         [DONE] Allow user to clear dumps by typing 'let it go' in input box
     ## USER EXPERIENCE
-        [wip] Add turd icon for each unclassified turd
         [] *FEATURE* instructions should change as user is typing
         [] make backlog link more visible
         [] *FEATURE* ask questions based on time of Day 
         [] background pictures depending on the time of day
         [] Create user instruction
+        [DONE] Add turd icon for each unclassified turd
         [DONE] add background image
         [DONE] add opacity to input screen
         [DONE] get the same font as in GOOGLE
