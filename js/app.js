@@ -222,7 +222,6 @@ let getBackGroundImage = function(){
 
 // body
     let background_img = getBackGroundImage();
-    console.log(background_img)
     document.body.style.backgroundImage  = background_img;
 	document.body.style.backgroundSize = "cover";
 
@@ -254,7 +253,7 @@ let getBackGroundImage = function(){
     //Link to Backlog
     let linkToBackLog = document.createElement("a");
     linkToBackLog.setAttribute('href', './backlog.md');
-    linkToBackLog.innerHTML = "<img src='imgs/icon/checklist.png' height=50 widght=20>";
+    linkToBackLog.innerHTML = "<img src='imgs/icon/checklist.png' height=25 widght=15>";
     footer.appendChild(linkToBackLog)
 
 // Footer end
