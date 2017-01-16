@@ -122,7 +122,7 @@ let makeTurdo = function(individualTurd){
 let changeTurdoStatus = function(e){
     let checkBox = e.currentTarget.checked;
     let turdoText = e.currentTarget.parentElement.getElementsByClassName('turdo_Text')[0];
-    console.log(turdoText)
+
     if (checkBox) {
         turdoText.style.textDecoration = 'line-through';
     } else{
@@ -134,7 +134,7 @@ let changeTurdoStatus = function(e){
 let makeFeeling = function(individualTurd, typeOfEmotion){
     let turdContainer = document.createElement('div');
     let emoticon = ""
-    console.log(typeOfEmotion);
+
     if (typeOfEmotion === 'Positive') {
         emoticon = "<img src='imgs/icon/happy.png' width='25px' height='25px'>";
     } else if(typeOfEmotion=== 'Negative'){
@@ -148,6 +148,12 @@ let makeFeeling = function(individualTurd, typeOfEmotion){
 
 }
 
+let makeTurd = function(individualTurd){
+    let turdContainer = document.createElement('div');
+    let emoticon = "<img src='imgs/icon/poop.png' width='25px' height='25px'>";
+    turdContainer.innerHTML = emoticon + ' ' + individualTurd;
+    return turdContainer
+}
 let storeDumps = function (){
     localStorage.setItem("todoTurds", toduTurds.innerHTML)
     localStorage.setItem("touchyFealyTurds", touchyFealyTurds.innerHTML)
@@ -199,8 +205,8 @@ let handleDumps = function(e){
                 touchyFealyTurds.appendChild(newDiv);
                 break;
             case 'unclassified':
-                turdDiv.innerHTML = individualTurd;
-                unclassifiedTurds.appendChild(turdDiv);
+                newDiv = makeTurd(individualTurd);
+                unclassifiedTurds.appendChild(newDiv);
                 break;
         }
         userInput.value = "" //Clears input field
