@@ -18,11 +18,7 @@ const userInfo = {
 
 let getTimeOfDaySpecificWelcomeMessage = function(){
     /****
-     * 4am - 6am    4,5,6
-     * 7am - 11am   7,8,9,10,11
-     * 12pm - 4pm   12, 13, 14, 15, 16
-     * 5pm - 12pm   17, 16, 17, 17, 19, 21, 22, 23, 0
-     * 1am - 3am    1,2,3
+     * I dont need comments...becouse my code is so clean...
      ***/
 
     const currentDate = new Date();
