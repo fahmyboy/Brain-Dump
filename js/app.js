@@ -52,7 +52,7 @@ let getTimeOfDaySpecificWelcomeMessage = function(){
         case 1:
         case 2:
         case 3:
-            return "Why are you awake ?"
+            return "Why are you awake "
     }
 }
 
