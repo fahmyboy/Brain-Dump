@@ -17,13 +17,25 @@ const userInfo = {
  ************/
 
 let getTimeOfDaySpecificWelcomeMessage = function(){
-    /****
-     * I dont need comments...becouse my code is so clean...
-     ***/
+
 
     const currentDate = new Date();
-    const currentHourOfDate = currentDate.getHours();
-    switch(currentHourOfDate){
+    const currentHour = currentDate.getHours();
+
+    if (currentHour === 4,5,6){
+        return "Wow, you're up early ";
+    } else if (currentHour=== 7,8,9,10,11){
+        return "Good Morning ";
+    } else if (currentHour === 12,13,14,15,16){
+        return "Good afternoon ";
+    } else if (currentHour === 17, 18, 19, 20, 21, 22, 23, 24, 0){
+        return "Good evening ";
+    } else if(currentHour === 1, 2, 3){
+        return "Can't sleep ";
+    }
+
+  /*
+    switch(currentHour){
         case 4:
         case 5:
         case 6:
@@ -54,6 +66,7 @@ let getTimeOfDaySpecificWelcomeMessage = function(){
         case 3:
             return "Why are you awake "
     }
+    */
 }
 
 let classifyTurd = function(turd){

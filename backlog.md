@@ -10,18 +10,18 @@
     ## TURDO
        [DONE] allow to mark as completed
     ## FEELING
-        [] add an emogi to a feeling
         [] provide some insight into breakdown of how they feel over time
         [] ask questions re: why you feel tht way?
         [] are you still feeling this? 
+        [DONE] add an emogi to a feeling
         [DONE] Text emojo
         [DONE] add a picture emoji. 14/1/2017
     ## COMMANDS
         [DONE] Allow user to clear dumps by typing 'let it go' in input box
     ## USER EXPERIENCE
         [] *FEATURE* instructions should change as user is typing
-        [] make backlog link more visible
         [] *FEATURE* ask questions based on time of Day 
+        [] make backlog link more visible
         [] background pictures depending on the time of day
         [] Create user instruction
         [DONE] Add turd icon for each unclassified turd
