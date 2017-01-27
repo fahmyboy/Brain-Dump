@@ -15,58 +15,25 @@ const userInfo = {
 /************
  * The functions
  ************/
-
 let getTimeOfDaySpecificWelcomeMessage = function(){
 
 
     const currentDate = new Date();
     const currentHour = currentDate.getHours();
 
-    if (currentHour === 4,5,6){
-        return "Wow, you're up early ";
-    } else if (currentHour=== 7,8,9,10,11){
-        return "Good Morning ";
-    } else if (currentHour === 12,13,14,15,16){
-        return "Good afternoon ";
-    } else if (currentHour === 17, 18, 19, 20, 21, 22, 23, 24, 0){
-        return "Good evening ";
-    } else if(currentHour === 1, 2, 3){
-        return "Can't sleep ";
-    }
-
-  /*
     switch(currentHour){
-        case 4:
-        case 5:
-        case 6:
+        case 4: case 5: case 6:
             return "Wow, you're up early ";
-        case 7:
-        case 8:
-        case 9:
-        case 10:
-        case 11:
+        case 7: case 8: case 9: case 10: case 11:
             return "Good morning ";
-        case 12:
-        case 13:
-        case 14:
-        case 15:
-        case 16:
+        case 12: case 13: case 14: case 15: case 16:
             return "Good afternoon ";
-        case 17:
-        case 18:
-        case 19:
-        case 20:
-        case 21:
-        case 22:
-        case 23:
-        case 0:
+        case 17: case 18: case 19: case 20: case 21: case 22: case 23: case 0:
             return "Good evening ";
-        case 1:
-        case 2:
-        case 3:
+        case 1: case 2: case 3:
             return "Why are you awake "
     }
-    */
+    
 }
 
 let classifyTurd = function(turd){
