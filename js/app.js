@@ -72,6 +72,50 @@ let classifyTurd = function(turd){
 
 }
 
+// Handle turd drag and drops
+let allowDrop = function(e) {
+    e.preventDefault();
+}
+
+let killThisTurd =  function(e){
+    e.srcElement.remove();
+}
+
+let getTurdText = function(e){
+    //console.log(e.srcElement.childNodes);
+    let turdText = e.srcElement.childNodes[1].innerText;
+    e.dataTransfer.setData("text", turdText);
+    }
+
+let reclasifyTurd = function(e){
+   let turdText = e.dataTransfer.getData("text");
+   let targetContainer = e.target.parentElement.id;
+   let newdiv   
+
+   switch(targetContainer){
+       case "turd_todos":
+        newdiv = makeTurdo(turdText);
+        toduTurds.appendChild(newdiv);
+      //  originalTurdConatainer.remove();
+
+       break;
+       case "turd_unclassified":
+        newdiv = makeTurd(turdText);
+        unclassifiedTurds.appendChild(newdiv);
+       // originalTurdConatainer.remove();
+       
+
+       break;
+       case "turd_feelings":
+        newdiv = makeFeeling(turdText);
+        touchyFealyTurds.appendChild(newdiv);
+       // originalTurdConatainer.remove();
+
+       break;
+   } 
+}
+
+
 let makeTurdo = function(individualTurd){
     /**
      * Takes in an intdividual turd and turns it into a todo item
@@ -82,11 +126,15 @@ let makeTurdo = function(individualTurd){
      * OUTPUT: complete div
      */
     let turdContainer = document.createElement('div')
+        turdContainer.setAttribute("draggable", "true");
+        turdContainer.setAttribute("ondragstart", "getTurdText(event)");
+        turdContainer.setAttribute("ondragend", "killThisTurd(event)")
+
     let checkBox = document.createElement('input')
         checkBox.setAttribute("type", "checkBox")
         checkBox.addEventListener("click", changeTurdoStatus);
     let turdoText = document.createElement("span")
-        turdoText.setAttribute("class", "turdo_Text")
+        turdoText.setAttribute("class", "turd_text")
         turdoText.innerHTML = individualTurd;
  
     turdContainer.appendChild(checkBox);
@@ -109,25 +157,50 @@ let changeTurdoStatus = function(e){
 
 let makeFeeling = function(individualTurd, typeOfEmotion){
     let turdContainer = document.createElement('div');
-    let emoticon = ""
+        turdContainer.setAttribute("draggable", "true");
+        turdContainer.setAttribute("ondragstart", "getTurdText(event)");
+        turdContainer.setAttribute("ondragend", "killThisTurd(event)")
+
+    let turdoText = document.createElement("span")
+        turdoText.setAttribute("class", "turd_text")
+        turdoText.innerHTML = individualTurd;
+
+    let emoticonContainer = document.createElement("span");
+
+    let emoticon= "";
 
     if (typeOfEmotion === 'Positive') {
         emoticon = "<img src='imgs/icon/happy.png' width='25px' height='25px'>";
     } else if(typeOfEmotion=== 'Negative'){
         emoticon = "<img src='imgs/icon/sad.png' width='25px' height='25px'>";
     } else{
-        emoticon = ":|"
+        emoticon = "<img src='imgs/icon/neutral.png' width='25px' height='25px'>";
     }
-    turdContainer.innerHTML = emoticon + individualTurd;
+    emoticonContainer.innerHTML = emoticon;
 
+    turdContainer.appendChild(emoticonContainer);    
+    turdContainer.appendChild(turdoText);
     return turdContainer;
 
 }
 
 let makeTurd = function(individualTurd){
     let turdContainer = document.createElement('div');
+    turdContainer.setAttribute("ondragstart", "getTurdText(event)");
+    turdContainer.setAttribute("draggable", "true");
+    turdContainer.setAttribute("ondragend", "killThisTurd(event)")
+
     let emoticon = "<img src='imgs/icon/poop.png' width='25px' height='25px'>";
-    turdContainer.innerHTML = emoticon + ' ' + individualTurd;
+
+    let turdoText = document.createElement("span")
+        turdoText.setAttribute("class", "turd_text")
+        turdoText.innerHTML = individualTurd;
+
+    let emoticonContainer = document.createElement("span");
+    emoticonContainer.innerHTML = emoticon;
+    
+    turdContainer.appendChild(emoticonContainer);    
+    turdContainer.appendChild(turdoText);
     return turdContainer
 }
 let storeDumps = function (){
@@ -224,6 +297,16 @@ let getBackGroundImage = function(){
     instructions.appendChild(greeting);
     instructions.appendChild(userAction);
 // User Instructions end
+
+    toduTurds.setAttribute("ondragover","allowDrop(event)");
+    touchyFealyTurds.setAttribute("ondragover","allowDrop(event)");
+    unclassifiedTurds.setAttribute("ondragover","allowDrop(event)");
+
+    toduTurds.setAttribute("ondrop","reclasifyTurd(event)")
+    touchyFealyTurds.setAttribute("ondrop","reclasifyTurd(event)")
+    unclassifiedTurds.setAttribute("ondrop","reclasifyTurd(event)")
+    
+
 
 // Footer Start
     //Link to Backlog
