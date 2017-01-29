@@ -280,7 +280,6 @@ let getBackGroundImage = function(){
     const greeting = document.createElement("h1");
     let welcomeMessage = getTimeOfDaySpecificWelcomeMessage();
     greeting.innerHTML = welcomeMessage + userInfo.name;
-// welcome message End
 
 // Input feel start 
     const userInput = document.createElement("input");
@@ -288,7 +287,6 @@ let getBackGroundImage = function(){
     userInput.setAttribute("id", "toilet");
     userInput.setAttribute("placeholder", "type a thought, hit [enter] & repeat...")
     userInteraction.appendChild(userInput);
-// Input feel start
 
 // User Instructions start 
     const userAction = document.createElement("h2");
@@ -296,7 +294,6 @@ let getBackGroundImage = function(){
 
     instructions.appendChild(greeting);
     instructions.appendChild(userAction);
-// User Instructions end
 
     toduTurds.setAttribute("ondragover","allowDrop(event)");
     touchyFealyTurds.setAttribute("ondragover","allowDrop(event)");
@@ -315,7 +312,6 @@ let getBackGroundImage = function(){
     linkToBackLog.innerHTML = "<img src='imgs/icon/checklist.png' height=25 widght=15>";
     footer.appendChild(linkToBackLog)
 
-// Footer end
 
 /*************
  * Event Handlers
