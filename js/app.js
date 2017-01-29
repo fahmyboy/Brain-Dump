@@ -295,6 +295,8 @@ let getBackGroundImage = function(){
     instructions.appendChild(greeting);
     instructions.appendChild(userAction);
 
+// Buckets
+
     toduTurds.setAttribute("ondragover","allowDrop(event)");
     touchyFealyTurds.setAttribute("ondragover","allowDrop(event)");
     unclassifiedTurds.setAttribute("ondragover","allowDrop(event)");
@@ -302,8 +304,19 @@ let getBackGroundImage = function(){
     toduTurds.setAttribute("ondrop","reclasifyTurd(event)")
     touchyFealyTurds.setAttribute("ondrop","reclasifyTurd(event)")
     unclassifiedTurds.setAttribute("ondrop","reclasifyTurd(event)")
-    
 
+
+
+    let howManyTurdos = toduTurds.childElementCount;
+
+    if (howManyTurdos === 0) {
+        let turdoBucketMessage = document.createElement("div")
+            turdoBucketMessage.setAttribute("id", "turdo_header");
+            turdoBucketMessage.innerText = "Things I have todo";
+        toduTurds.appendChild(turdoBucketMessage);
+
+
+    }
 
 // Footer Start
     //Link to Backlog
