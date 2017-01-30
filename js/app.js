@@ -306,7 +306,6 @@ let getBackGroundImage = function(){
     unclassifiedTurds.setAttribute("ondrop","reclasifyTurd(event)")
 
 
-
     let howManyTurdos = toduTurds.childElementCount;
 
     if (howManyTurdos === 0) {
