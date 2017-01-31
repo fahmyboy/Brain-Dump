@@ -3,7 +3,7 @@
     
 }
 
-#turd_todos, #turd_feelings
+#turd_feelings
 {
     color: white;
     border-width: 1px;
@@ -13,8 +13,28 @@
     width: 29%;
     float: left;
     text-align: left;
-    background-color: rgba(0, 172, 237, 0.8);
-    margin: 10px
+    background-color: rgba(0, 0, 0, .4);
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 30px #ffffff;
+
+    
+}
+
+ #turd_todos
+{
+    color: white;
+    border-width: 1px;
+    border-color: grey;
+    padding: 5px;
+    margin:1px;
+    width: 29%;
+    float: left;
+    text-align: left;
+    background-color: rgba(0, 0, 0, .4);
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 30px #ffffff;
 
     
 }
@@ -28,10 +48,13 @@
     width: 30%;
     float: left;
     text-align: left;
-    background-color: rgba(0, 132, 180, 0.8);
+    background-color: rgba(0, 0, 0, .4);
     border-radius: 5px;
-    margin: 10px
-}h1{
+    margin: 10px;
+    box-shadow: 1px 1px 30px #ffffff;
+
+}
+h1{
     color: white;
     font-size: 50pt;
     text-align: center;

@@ -273,7 +273,9 @@ let handleDumps = function(e){
 }
 
 let getBackGroundImage = function(){
-    return "url('imgs/Tunnel of trees.jpg')";
+    //return "url('imgs/Tunnel of trees.jpg')";
+    return "url('imgs/agadir_sunset.jpg')";
+    
 }
 /**
  * Section adds additional HTML elements to the DIV containers
