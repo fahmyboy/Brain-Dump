@@ -124,6 +124,13 @@ let reclasifyTurd = function(e){
    } 
 }
 
+const createTurdDiv = function(){
+    const turdContainer = document.createElement('div');
+        turdContainer.setAttribute("draggable", "true");
+        turdContainer.setAttribute("ondragstart", "getTurdText(event)");
+        turdContainer.setAttribute("ondragend", "killThisTurd(event)");
+    return turdContainer;
+}
 
 let makeTurdo = function(individualTurd){
     /**
@@ -134,10 +141,7 @@ let makeTurdo = function(individualTurd){
      * INPUT : turd
      * OUTPUT: complete div
      */
-    let turdContainer = document.createElement('div');
-        turdContainer.setAttribute("draggable", "true");
-        turdContainer.setAttribute("ondragstart", "getTurdText(event)");
-        turdContainer.setAttribute("ondragend", "killThisTurd(event)");
+    const turdContainer = createTurdDiv();
 
     let checkBox = document.createElement('input');
         checkBox.setAttribute("type", "checkBox");
@@ -164,10 +168,8 @@ let changeTurdoStatus = function(e){
 }
 
 let makeFeeling = function(individualTurd, typeOfEmotion){
-    let turdContainer = document.createElement('div');
-        turdContainer.setAttribute("draggable", "true");
-        turdContainer.setAttribute("ondragstart", "getTurdText(event)");
-        turdContainer.setAttribute("ondragend", "killThisTurd(event)");
+   const turdContainer = createTurdDiv();
+
 
     let turdoText = document.createElement("span");
         turdoText.setAttribute("class", "turd_text");
@@ -193,10 +195,8 @@ let makeFeeling = function(individualTurd, typeOfEmotion){
 }
 
 let makeTurd = function(individualTurd){
-    let turdContainer = document.createElement('div');
-    turdContainer.setAttribute("ondragstart", "getTurdText(event)");
-    turdContainer.setAttribute("draggable", "true");
-    turdContainer.setAttribute("ondragend", "killThisTurd(event)")
+    const  turdContainer = createTurdDiv();
+
 
     let emoticon = "<img src='imgs/icon/poop.png' width='25px' height='25px'>";
 
