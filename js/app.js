@@ -305,7 +305,7 @@ let getBackGroundImage = function(){
         userAction.innerHTML="empty your mind"
 
     instructions.appendChild(greeting);
-    instructions.appendChild(userAction);
+    //instructions.appendChild(userAction);
 
 // Buckets
 
