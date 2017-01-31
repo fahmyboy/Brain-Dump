@@ -141,7 +141,7 @@ let makeTurdo = function(individualTurd){
      * INPUT : turd
      * OUTPUT: complete div
      */
-    const turdContainer = createTurdDiv();
+    let turdContainer = createTurdDiv();
 
     let checkBox = document.createElement('input');
         checkBox.setAttribute("type", "checkBox");
@@ -158,8 +158,7 @@ let makeTurdo = function(individualTurd){
 
 let changeTurdoStatus = function(e){
     let checkBox = e.currentTarget.checked;
-    let turdoText = e.currentTarget.parentElement.getElementsByClassName('turdo_Text')[0];
-
+    let turdoText = e.currentTarget.parentElement.getElementsByClassName('turd_Text')[0];
     if (checkBox) {
         turdoText.style.textDecoration = 'line-through';
     } else{
@@ -317,7 +316,7 @@ let getBackGroundImage = function(){
     touchyFealyTurds.setAttribute("ondrop","reclasifyTurd(event)")
     unclassifiedTurds.setAttribute("ondrop","reclasifyTurd(event)")
 
-
+/*
     let howManyTurdos = toduTurds.childElementCount;
 
     if (howManyTurdos === 0) {
@@ -328,7 +327,7 @@ let getBackGroundImage = function(){
 
 
     }
-
+*/
 // Footer Start
     //Link to Backlog
     let linkToBackLog = document.createElement("a");
