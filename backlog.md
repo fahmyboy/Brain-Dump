@@ -17,7 +17,8 @@
         [DONE] Text emojo
         [DONE] add a picture emoji. 14/1/2017
     ## COMMANDS
-        [DONE] Allow user to clear dumps by typing 'let it go' in input box
+        [DONE] Allow user to clear dumps by typing 'let it all go' in input box
+        [DONE] Allow user to clear all dumps execpt todo's by typing 'let all the turds go' in input box
     ## USER EXPERIENCE
         [] *FEATURE* instructions should change as user is typing
         [] *FEATURE* ask questions based on time of Day 
