@@ -31,7 +31,7 @@ let getTimeOfDaySpecificWelcomeMessage = function(){
         case 17: case 18: case 19: case 20: case 21: case 22: case 23: case 0:
             return "Good evening ";
         case 1: case 2: case 3:
-            return "Why are you awake "
+            return "Why are you awake ";
     }
     
 }
@@ -49,17 +49,25 @@ let classifyTurd = function(turd){
     let feelingPattern_Negative = new RegExp('stressed|tired|lonely|frustrated|angry|hate|upset|sad|like|worried');
     let feelingPattern_Positive = new RegExp('happy|grateful|love');
     let userCommand = new RegExp('let it all go');
+    let userCommand_KeepTheTurdo = new RegExp('let all the turds go');
 
     let isItATodo = todoPattern.test(turd);
     let isItNegativeFeeling = feelingPattern_Negative.test(turd);
     let isItAPositiveFeeling = feelingPattern_Positive.test(turd);
     let isItAUserCommand_Clear = userCommand.test(turd);
+    let isItAUserCommand_KeepTheTurdo = userCommand_KeepTheTurdo.test(turd);
+
 
     if (isItAUserCommand_Clear){
         clearDumps();
         return "";
     }
-    
+
+    if (isItAUserCommand_KeepTheTurdo){
+        clearDumps('todos');
+        return "";
+    }
+
     if (isItATodo===true){ 
         return ['todo']
     }else if (isItNegativeFeeling===true){
@@ -74,6 +82,7 @@ let classifyTurd = function(turd){
 
 // Handle turd drag and drops
 let allowDrop = function(e) {
+
     e.preventDefault();
 }
 
@@ -90,7 +99,7 @@ let getTurdText = function(e){
 let reclasifyTurd = function(e){
    let turdText = e.dataTransfer.getData("text");
    let targetContainer = e.target.parentElement.id;
-   let newdiv   
+   let newdiv;
 
    switch(targetContainer){
        case "turd_todos":
@@ -125,22 +134,22 @@ let makeTurdo = function(individualTurd){
      * INPUT : turd
      * OUTPUT: complete div
      */
-    let turdContainer = document.createElement('div')
+    let turdContainer = document.createElement('div');
         turdContainer.setAttribute("draggable", "true");
         turdContainer.setAttribute("ondragstart", "getTurdText(event)");
-        turdContainer.setAttribute("ondragend", "killThisTurd(event)")
+        turdContainer.setAttribute("ondragend", "killThisTurd(event)");
 
-    let checkBox = document.createElement('input')
-        checkBox.setAttribute("type", "checkBox")
+    let checkBox = document.createElement('input');
+        checkBox.setAttribute("type", "checkBox");
         checkBox.addEventListener("click", changeTurdoStatus);
-    let turdoText = document.createElement("span")
-        turdoText.setAttribute("class", "turd_text")
+    let turdoText = document.createElement("span");
+        turdoText.setAttribute("class", "turd_text");
         turdoText.innerHTML = individualTurd;
  
     turdContainer.appendChild(checkBox);
     turdContainer.appendChild(turdoText);
 
-    return turdContainer
+    return turdContainer;
 }
 
 let changeTurdoStatus = function(e){
@@ -151,7 +160,6 @@ let changeTurdoStatus = function(e){
         turdoText.style.textDecoration = 'line-through';
     } else{
         turdoText.style.textDecoration = 'none';
-
     }
 }
 
@@ -159,10 +167,10 @@ let makeFeeling = function(individualTurd, typeOfEmotion){
     let turdContainer = document.createElement('div');
         turdContainer.setAttribute("draggable", "true");
         turdContainer.setAttribute("ondragstart", "getTurdText(event)");
-        turdContainer.setAttribute("ondragend", "killThisTurd(event)")
+        turdContainer.setAttribute("ondragend", "killThisTurd(event)");
 
-    let turdoText = document.createElement("span")
-        turdoText.setAttribute("class", "turd_text")
+    let turdoText = document.createElement("span");
+        turdoText.setAttribute("class", "turd_text");
         turdoText.innerHTML = individualTurd;
 
     let emoticonContainer = document.createElement("span");
@@ -210,12 +218,14 @@ let storeDumps = function (){
 
 }
 
-let clearDumps = function(){
+let clearDumps = function(whatNotToClear){
     localStorage.setItem("todoTurds", "")
     localStorage.setItem("touchyFealyTurds", "")
     localStorage.setItem("unclassifiedTurds", "")
 
-    toduTurds.innerHTML = "";
+    if(whatNotToClear !== 'todos'){
+        toduTurds.innerHTML = "";
+    }
     touchyFealyTurds.innerHTML = "";
     unclassifiedTurds.innerHTML = "";
 }
