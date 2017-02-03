@@ -113,3 +113,12 @@ h2{
     margin: 2px
 }
 
+#turd_contrainer{
+    border-bottom: 1px;
+    border-top: 1px;
+    border-left:1px;
+    border-right:1px;
+    border-style: inset;
+    border-color: grey;
+    margin:5px;
+}

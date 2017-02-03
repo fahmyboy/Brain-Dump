@@ -129,6 +129,8 @@ const createTurdDiv = function(){
         turdContainer.setAttribute("draggable", "true");
         turdContainer.setAttribute("ondragstart", "getTurdText(event)");
         turdContainer.setAttribute("ondragend", "killThisTurd(event)");
+        turdContainer.setAttribute("id", "turd_contrainer");
+
     return turdContainer;
 }
 
@@ -175,7 +177,7 @@ let makeFeeling = function(individualTurd, typeOfEmotion){
         turdoText.innerHTML = individualTurd;
 
     let emoticonContainer = document.createElement("span");
-
+        
     let emoticon= "";
 
     if (typeOfEmotion === 'Positive') {
