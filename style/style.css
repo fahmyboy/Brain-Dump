@@ -8,7 +8,7 @@
     color: white;
     border-width: 1px;
     border-color: grey;
-    padding: 5px;
+    padding: 0px;
     margin:1px;
     width: 29%;
     float: left;
@@ -24,7 +24,7 @@
     color: white;
     border-width: 1px;
     border-color: grey;
-    padding: 5px;
+    padding: 0px;
     margin:1px;
     width: 29%;
     float: left;
@@ -41,7 +41,7 @@
 {
     color: white;
     border-width: 1px;
-    padding: 5px;
+    padding: 0px;
     margin:1px;
     width: 30%;
     float: left;
@@ -121,4 +121,6 @@ h2{
     border-style: inset;
     border-color: grey;
     margin:5px;
+    border-radius: 8px;     
+
 }
