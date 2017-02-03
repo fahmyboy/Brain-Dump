@@ -13,10 +13,10 @@
     width: 29%;
     float: left;
     text-align: left;
-    background-color: rgba(0, 0, 0, .4);
+    /*background-color: rgba(0, 0, 0, .4);*/
     margin: 5px;
     border-radius: 5px;
-    box-shadow: 1px 1px 30px #ffffff;
+    /*box-shadow: 1px 1px 30px #ffffff;*/
 }
 
  #turd_todos
@@ -29,10 +29,10 @@
     width: 29%;
     float: left;
     text-align: left;
-    background-color: rgba(0, 0, 0, .4);
+    /*background-color: rgba(0, 0, 0, .4);*/
     margin: 5px;
     border-radius: 5px;
-    box-shadow: 1px 1px 30px #ffffff;
+    /*box-shadow: 1px 1px 30px #ffffff;*/
 
     
 }
@@ -46,10 +46,10 @@
     width: 30%;
     float: left;
     text-align: left;
-    background-color: rgba(0, 0, 0, .4);
+    /*background-color: rgba(0, 0, 0, .4);*/
     border-radius: 5px;
     margin: 5px;
-    box-shadow: 1px 1px 30px #ffffff;
+    /*box-shadow: 1px 1px 30px #ffffff;*/
 
 }
 h1{
@@ -121,6 +121,8 @@ h2{
     border-style: inset;
     border-color: grey;
     margin:5px;
-    border-radius: 8px;     
-
+    border-radius: 8px;  
+    background-color: rgba(0, 0, 0, .4);
+    padding: 2px;
+   
 }
