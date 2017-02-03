@@ -14,11 +14,9 @@
     float: left;
     text-align: left;
     background-color: rgba(0, 0, 0, .4);
-    margin: 10px;
+    margin: 5px;
     border-radius: 5px;
     box-shadow: 1px 1px 30px #ffffff;
-
-    
 }
 
  #turd_todos
@@ -32,7 +30,7 @@
     float: left;
     text-align: left;
     background-color: rgba(0, 0, 0, .4);
-    margin: 10px;
+    margin: 5px;
     border-radius: 5px;
     box-shadow: 1px 1px 30px #ffffff;
 
@@ -50,7 +48,7 @@
     text-align: left;
     background-color: rgba(0, 0, 0, .4);
     border-radius: 5px;
-    margin: 10px;
+    margin: 5px;
     box-shadow: 1px 1px 30px #ffffff;
 
 }
