@@ -16,8 +16,6 @@ const userInfo = {
  * The functions
  ************/
 let getTimeOfDaySpecificWelcomeMessage = function(){
-
-
     const currentDate = new Date();
     const currentHour = currentDate.getHours();
 
@@ -147,7 +145,8 @@ let makeTurdo = function(individualTurd){
 
     let checkBox = document.createElement('input');
         checkBox.setAttribute("type", "checkBox");
-        checkBox.addEventListener("click", changeTurdoStatus);
+        checkBox.setAttribute("onclick", "changeTurdoStatus(event)");
+        //checkBox.addEventListener("click", changeTurdoStatus);
     let turdoText = document.createElement("span");
         turdoText.setAttribute("class", "turd_text");
         turdoText.innerHTML = individualTurd;
