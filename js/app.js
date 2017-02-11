@@ -7,6 +7,11 @@ const touchyFealyTurds = document.getElementById("turd_feelings"); //output of t
 const unclassifiedTurds = document.getElementById("turd_unclassified"); //output of the user
 const footer = document.getElementById("footer"); //output of the user
 
+ //session variables
+let numberOfNewTurdos = 0;
+let numberOfNewFeelings = 0;
+let numberOfNewUnclassified = 0;
+
 const userInfo = {
     name : ""
 }
@@ -82,6 +87,7 @@ let classifyTurd = function(turd){
 let allowDrop = function(e) {
 
     e.preventDefault();
+    console.log(e)
 }
 
 let killThisTurd =  function(e){
@@ -153,7 +159,7 @@ let makeTurdo = function(individualTurd){
  
     turdContainer.appendChild(checkBox);
     turdContainer.appendChild(turdoText);
-
+    numberOfNewTurdos++
     return turdContainer;
 }
 
@@ -190,6 +196,7 @@ let makeFeeling = function(individualTurd, typeOfEmotion){
 
     turdContainer.appendChild(emoticonContainer);    
     turdContainer.appendChild(turdoText);
+    numberOfNewFeelings++;
     return turdContainer;
 
 }
@@ -209,6 +216,7 @@ let makeTurd = function(individualTurd){
     
     turdContainer.appendChild(emoticonContainer);    
     turdContainer.appendChild(turdoText);
+    numberOfNewUnclassified++;
     return turdContainer
 }
 let storeDumps = function (){
@@ -269,9 +277,30 @@ let handleDumps = function(e){
                 break;
         }
         userInput.value = "" //Clears input field
+        userInput.setAttribute("placeholder", getHintMessage())
+
      }         
 }
 
+let getHintMessage = function(){
+    /*messages
+    "How are you feeling now"
+    "What is keeping you up at night?"
+    "What are you greateful for today?"
+    "What are three most important things you need to do today?"
+    */
+    console.log('todos: '+numberOfNewTurdos)
+    console.log('unclassified: '+numberOfNewUnclassified)
+    console.log('feelings: '+numberOfNewFeelings)
+
+    if (numberOfNewFeelings < 3 ){
+        return "How are you feeling?";
+    } else if (numberOfNewTurdos < 3){
+        return "What is most important thing you need to do today?";
+    } else {
+        return "What else is on your mind?"
+    }
+}
 let getBackGroundImage = function(){
     //return "url('imgs/Tunnel of trees.jpg')";
     return "url('imgs/agadir_sunset.jpg')";
@@ -297,7 +326,7 @@ let getBackGroundImage = function(){
     const userInput = document.createElement("input");
     userInput.setAttribute("type", "text");
     userInput.setAttribute("id", "toilet");
-    userInput.setAttribute("placeholder", "type a thought, hit [enter] & repeat...")
+    userInput.setAttribute("placeholder", "What are you grateful for")
     userInteraction.appendChild(userInput);
 
 // User Instructions start 
