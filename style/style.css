@@ -1,6 +1,5 @@
 * {
     font-family: 'Roboto', sans-serif;
-    
 }
 
 #turd_feelings
@@ -10,7 +9,7 @@
     border-color: grey;
     padding: 0px;
     margin:1px;
-    width: 29%;
+    width: 28%;
     float: left;
     text-align: left;
     /*background-color: rgba(0, 0, 0, .4);*/
@@ -22,18 +21,17 @@
  #turd_todos
 {
     color: white;
+    font-size: 18pt;
     border-width: 1px;
     border-color: grey;
-    padding: 0px;
+    padding: 1px;
     margin:1px;
-    width: 29%;
+    width: 33%;
     float: left;
     text-align: left;
     /*background-color: rgba(0, 0, 0, .4);*/
     margin: 5px;
     border-radius: 5px;
-    /*box-shadow: 1px 1px 30px #ffffff;*/
-
     
 }
 
@@ -43,7 +41,7 @@
     border-width: 1px;
     padding: 0px;
     margin:1px;
-    width: 30%;
+    width: 28%;
     float: left;
     text-align: left;
     /*background-color: rgba(0, 0, 0, .4);*/
