@@ -282,6 +282,8 @@ let handleDumps = function(e){
      }         
 }
 
+let countWhatIsOnYourMind = 0;
+let countThreeMostImportantThings = 0;
 let getHintMessage = function(){
     /*messages
     "How are you feeling now"
@@ -289,17 +291,33 @@ let getHintMessage = function(){
     "What are you greateful for today?"
     "What are three most important things you need to do today?"
     */
+    /*
     console.log('todos: '+numberOfNewTurdos)
     console.log('unclassified: '+numberOfNewUnclassified)
     console.log('feelings: '+numberOfNewFeelings)
+    */
 
-    if (numberOfNewFeelings < 3 ){
-        return "How are you feeling?";
-    } else if (numberOfNewTurdos < 3){
-        return "What is most important thing you need to do today?";
-    } else {
-        return "What else is on your mind?"
+    if (countWhatIsOnYourMind < 3){
+        countWhatIsOnYourMind++;
+        console.log(countWhatIsOnYourMind);
+        return "What is on your mind?"       
     }
+
+    if (countThreeMostImportantThings===0){
+        countThreeMostImportantThings++;
+        return "What is the single most important thing you need to do today?";
+    }
+
+    if (countThreeMostImportantThings==1){
+        countThreeMostImportantThings++;
+        return "What is the second most important thing you need to do today?";
+    }
+
+    if (countThreeMostImportantThings===2){
+        countThreeMostImportantThings++;
+        return "What is the third most important thing you need to do today?";
+    }
+    return "what else is on your mind?"
 }
 let getBackGroundImage = function(){
     //return "url('imgs/Tunnel of trees.jpg')";
