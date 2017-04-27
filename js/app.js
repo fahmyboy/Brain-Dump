@@ -344,7 +344,7 @@ let getBackGroundImage = function(){
     const userInput = document.createElement("input");
     userInput.setAttribute("type", "text");
     userInput.setAttribute("id", "toilet");
-    userInput.setAttribute("placeholder", "What are you grateful for")
+    userInput.setAttribute("placeholder", "Just type and press [enter]")
     userInteraction.appendChild(userInput);
 
 // User Instructions start 
