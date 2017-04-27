@@ -12,14 +12,25 @@ let numberOfNewTurdos = 0;
 let numberOfNewFeelings = 0;
 let numberOfNewUnclassified = 0;
 
-const userInfo = {
-    name : ""
+let getUserName = function(){
+    let useEnhancedCode = false;
+    if (useEnhancedCode){
+        //
+    }else{
+        return "Ahmad";
+    }
 }
+
+const userInfo = {
+    name : getUserName()
+}
+
 
 
 /************
  * The functions
  ************/
+
 let getTimeOfDaySpecificWelcomeMessage = function(){
     const currentDate = new Date();
     const currentHour = currentDate.getHours();
