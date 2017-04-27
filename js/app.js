@@ -60,8 +60,8 @@ let classifyTurd = function(turd){
     *   Outputs: either a todo, feeling, unclassified
     *****/
     let todoPattern = new RegExp('to do|need to|todo|go to|pick up|want to|wanna');
-    let feelingPattern_Negative = new RegExp('stressed|tired|lonely|frustrated|angry|hate|upset|sad|like|worried');
-    let feelingPattern_Positive = new RegExp('happy|grateful|love');
+    let feelingPattern_Negative = new RegExp('stressed|tired|lonely|frustrated|angry|hate|upset|sad|worried');
+    let feelingPattern_Positive = new RegExp('happy|grateful|love|like');
     let userCommand = new RegExp('let it all go');
     let userCommand_KeepTheTurdo = new RegExp('let all the turds go');
 
